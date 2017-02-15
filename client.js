@@ -11,4 +11,12 @@ for (var i = 0; i < colorArray.length; i++) {
   $('#colorBlockContainer').append(newColorBlock); // Add the div to the DOM
 }
 
+// Select a random color and add it to the DOM
+var randomNumberSelected = randomNumber(0, colorArray.length - 1); // get random number from 0 through 4 and assigns that to randomNumberSelected
+var randomColor = colorArray[randomNumberSelected]; // uses randomNumberSelected
+$('#userColorPrompt').text(randomColor);
 });
+
+function randomNumber(min, max){
+    return Math.floor(Math.random() * (1 + max - min) + min);
+}
